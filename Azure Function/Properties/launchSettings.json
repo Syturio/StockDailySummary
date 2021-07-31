@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ProjetoEstagio": {
+      "commandName": "Project",
+      "commandLineArgs": "start --verbose"
+    }
+  }
+}

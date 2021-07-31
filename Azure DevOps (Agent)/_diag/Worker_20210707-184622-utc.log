@@ -1,0 +1,1344 @@
+[2021-07-07 18:46:22Z INFO Program] Version: 2.188.3
+[2021-07-07 18:46:22Z INFO Program] Commit: c37ab2642aed2535892a7014e0f96d1e87828d4d
+[2021-07-07 18:46:22Z INFO Program] Culture: pt-PT
+[2021-07-07 18:46:22Z INFO Program] UI Culture: pt-PT
+[2021-07-07 18:46:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:22Z INFO HostContext] Well known config file 'Proxy': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.proxy'
+[2021-07-07 18:46:22Z INFO VstsAgentWebProxy] No proxy setting found.
+[2021-07-07 18:46:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:22Z INFO HostContext] Well known config file 'Certificates': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.certificates'
+[2021-07-07 18:46:22Z INFO AgentCertificateManager] No certificate setting found.
+[2021-07-07 18:46:22Z INFO Worker] Waiting to receive the job message from the channel.
+[2021-07-07 18:46:22Z INFO Worker] Message received.
+[2021-07-07 18:46:22Z INFO Worker] Job message:
+ {
+  "mask": [
+    {
+      "type": "regex",
+      "value": ***
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "inputs": {
+        "repository": "__designer_repo",
+        "clean": "false",
+        "fetchDepth": "0",
+        "lfs": "false"
+      },
+      "type": "task",
+      "reference": {
+        "id": "6d15af64-176c-496d-b583-fd2ae21d4df4",
+        "name": "Checkout",
+        "version": "1.0.0"
+      },
+      "id": "771d55ec-34a7-5ddd-398e-3e8e57b4f3f0",
+      "name": "Checkout",
+      "displayName": "Checkout"
+    },
+    {
+      "inputs": {
+        "command": "build",
+        "publishWebProjects": "true",
+        "projects": "**/*.csproj",
+        "custom": "",
+        "arguments": "--output publish_output --configuration Release",
+        "restoreArguments": "",
+        "publishTestResults": "true",
+        "testRunTitle": "",
+        "zipAfterPublish": "true",
+        "modifyOutputPath": "true",
+        "selectOrConfig": "select",
+        "feedRestore": "",
+        "includeNuGetOrg": "true",
+        "nugetConfigPath": "",
+        "externalEndpoints": "",
+        "noCache": "false",
+        "packagesDirectory": "",
+        "verbosityRestore": "Detailed",
+        "searchPatternPush": "$(Build.ArtifactStagingDirectory)/*.nupkg",
+        "nuGetFeedType": "internal",
+        "feedPublish": "",
+        "publishPackageMetadata": "true",
+        "externalEndpoint": "",
+        "searchPatternPack": "**/*.csproj",
+        "configurationToPack": "$(BuildConfiguration)",
+        "outputDir": "$(Build.ArtifactStagingDirectory)",
+        "nobuild": "false",
+        "includesymbols": "false",
+        "includesource": "false",
+        "versioningScheme": "off",
+        "versionEnvVar": "",
+        "requestedMajorVersion": "1",
+        "requestedMinorVersion": "0",
+        "requestedPatchVersion": "0",
+        "buildProperties": "",
+        "verbosityPack": "Detailed",
+        "workingDirectory": ""
+      },
+      "type": "task",
+      "reference": {
+        "id": "5541a522-603c-47ad-91fc-a4b1d163081b",
+        "name": "DotNetCoreCLI",
+        "version": "2.187.0"
+      },
+      "condition": "succeeded()",
+      "id": "37ff9366-b26f-54de-6861-3886e8f3e5fc",
+      "name": "DotNetCoreCLI",
+      "displayName": "Build project"
+    },
+    {
+      "inputs": {
+        "rootFolderOrFile": "publish_output/",
+        "includeRootFolder": "false",
+        "archiveType": "zip",
+        "sevenZipCompression": "5",
+        "tarCompression": "gz",
+        "archiveFile": "$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip",
+        "replaceExistingArchive": "true",
+        "verbose": "false",
+        "quiet": "false"
+      },
+      "type": "task",
+      "reference": {
+        "id": "d8b84976-e99a-4b86-b885-4849694435b0",
+        "name": "ArchiveFiles",
+        "version": "2.186.0"
+      },
+      "condition": "succeeded()",
+      "id": "96626e74-5332-523c-05f6-e27aa60d9625",
+      "name": "ArchiveFiles",
+      "displayName": "Archive files"
+    },
+    {
+      "inputs": {
+        "PathtoPublish": "$(Build.ArtifactStagingDirectory)",
+        "ArtifactName": "drop",
+        "ArtifactType": "Container",
+        "TargetPath": "",
+        "Parallel": "false",
+        "ParallelCount": "8",
+        "FileCopyOptions": "",
+        "StoreAsTar": "false"
+      },
+      "type": "task",
+      "reference": {
+        "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+        "name": "PublishBuildArtifacts",
+        "version": "1.186.0"
+      },
+      "condition": "succeeded()",
+      "id": "ff44e5f8-4d79-5f05-21e3-42769c983609",
+      "name": "PublishBuildArtifacts",
+      "displayName": "Publish Artifact: drop"
+    },
+    {
+      "inputs": {
+        "azureSubscription": "ca5b1976-9100-4e44-9fa7-9daebe4c8ba3",
+        "appType": "functionApp",
+        "appName": "alfacefunction2",
+        "deployToSlotOrASE": "false",
+        "resourceGroupName": "",
+        "slotName": "production",
+        "package": "$(Build.ArtifactStagingDirectory)/*.zip",
+        "runtimeStack": "",
+        "startUpCommand": "",
+        "customWebConfig": "",
+        "appSettings": "",
+        "configurationStrings": "",
+        "deploymentMethod": "auto"
+      },
+      "type": "task",
+      "reference": {
+        "id": "501dd25d-1785-43e4-b4e5-a5c78ccc0573",
+        "name": "AzureFunctionApp",
+        "version": "1.187.0"
+      },
+      "condition": "succeeded()",
+      "id": "6290e2b4-ee47-5378-4478-7c99dadc88fd",
+      "name": "AzureFunctionApp",
+      "displayName": "Azure Function App Deploy: alfacefunction2"
+    }
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false"
+    },
+    "resources.triggeringCategory": {
+      "value": ""
+    },
+    "resources.triggeringAlias": {
+      "value": ""
+    },
+    "system": {
+      "value": "build",
+      "isReadOnly": true
+    },
+    "system.hosttype": {
+      "value": "build",
+      "isReadOnly": true
+    },
+    "system.servertype": {
+      "value": "Hosted",
+      "isReadOnly": true
+    },
+    "system.culture": {
+      "value": "en-US",
+      "isReadOnly": true
+    },
+    "system.collectionId": {
+      "value": "691acfa7-acdb-4abd-899c-772800311b5e",
+      "isReadOnly": true
+    },
+    "system.collectionUri": {
+      "value": "https://dev.azure.com/upskillprojetoestagio/",
+      "isReadOnly": true
+    },
+    "system.teamFoundationCollectionUri": {
+      "value": "https://dev.azure.com/upskillprojetoestagio/",
+      "isReadOnly": true
+    },
+    "system.taskDefinitionsUri": {
+      "value": "https://dev.azure.com/upskillprojetoestagio/",
+      "isReadOnly": true
+    },
+    "system.pipelineStartTime": {
+      "value": "2021-07-07 18:46:35+00:00",
+      "isReadOnly": true
+    },
+    "system.teamProject": {
+      "value": "TeslaDailySummary",
+      "isReadOnly": true
+    },
+    "system.teamProjectId": {
+      "value": "a93f10bb-af69-4a66-8379-6fe10f04b79f",
+      "isReadOnly": true
+    },
+    "system.definitionId": {
+      "value": "2",
+      "isReadOnly": true
+    },
+    "build.definitionName": {
+      "value": "Pipeline1",
+      "isReadOnly": true
+    },
+    "build.definitionVersion": {
+      "value": "3",
+      "isReadOnly": true
+    },
+    "build.queuedBy": {
+      "value": "[PII]",
+      "isReadOnly": true
+    },
+    "build.queuedById": {
+      "value": "00000002-0000-8888-8000-000000000000",
+      "isReadOnly": true
+    },
+    "build.requestedFor": {
+      "value": "[PII]",
+      "isReadOnly": true
+    },
+    "build.requestedForId": {
+      "value": "00000002-0000-8888-8000-000000000000",
+      "isReadOnly": true
+    },
+    "build.requestedForEmail": {
+      "value": "[PII]",
+      "isReadOnly": true
+    },
+    "build.sourceVersionMessage": {
+      "value": "Update Function1.cs",
+      "isReadOnly": true
+    },
+    "build.sourceVersion": {
+      "value": "[PII]",
+      "isReadOnly": true
+    },
+    "build.sourceBranch": {
+      "value": "[PII]",
+      "isReadOnly": true
+    },
+    "build.sourceBranchName": {
+      "value": "[PII]",
+      "isReadOnly": true
+    },
+    "build.reason": {
+      "value": "IndividualCI",
+      "isReadOnly": true
+    },
+    "system.pullRequest.isFork": {
+      "value": "False",
+      "isReadOnly": true
+    },
+    "system.jobParallelismTag": {
+      "value": "Public",
+      "isReadOnly": true
+    },
+    "MSDEPLOY_HTTP_USER_AGENT": {
+      "value": "VSTS_691acfa7-acdb-4abd-899c-772800311b5e_build_2_0",
+      "isReadOnly": true
+    },
+    "AZURE_HTTP_USER_AGENT": {
+      "value": "VSTS_691acfa7-acdb-4abd-899c-772800311b5e_build_2_0",
+      "isReadOnly": true
+    },
+    "build.buildId": {
+      "value": "7",
+      "isReadOnly": true
+    },
+    "build.buildUri": {
+      "value": "vstfs:///Build/Build/7",
+      "isReadOnly": true
+    },
+    "build.buildNumber": {
+      "value": "7",
+      "isReadOnly": true
+    },
+    "build.containerId": {
+      "value": "1604793",
+      "isReadOnly": true
+    },
+    "system.isScheduled": {
+      "value": "False",
+      "isReadOnly": true
+    },
+    "system.definitionName": {
+      "value": "Pipeline1",
+      "isReadOnly": true
+    },
+    "system.planId": {
+      "value": "cf8ec018-a846-4785-b9a8-4e94828bf279",
+      "isReadOnly": true
+    },
+    "system.timelineId": {
+      "value": "cf8ec018-a846-4785-b9a8-4e94828bf279",
+      "isReadOnly": true
+    },
+    "system.stageDisplayName": {
+      "value": "__default",
+      "isReadOnly": true
+    },
+    "system.stageId": {
+      "value": "96ac2280-8cb4-5df5-99de-dd2da759617d",
+      "isReadOnly": true
+    },
+    "system.stageName": {
+      "value": "__default",
+      "isReadOnly": true
+    },
+    "system.stageAttempt": {
+      "value": "1",
+      "isReadOnly": true
+    },
+    "system.phaseDisplayName": {
+      "value": "Agent job 1",
+      "isReadOnly": true
+    },
+    "system.phaseId": {
+      "value": "2f97f1d8-943c-5cda-8782-cbcebf2b3d67",
+      "isReadOnly": true
+    },
+    "system.phaseName": {
+      "value": "Job_1",
+      "isReadOnly": true
+    },
+    "system.phaseAttempt": {
+      "value": "1",
+      "isReadOnly": true
+    },
+    "system.jobIdentifier": {
+      "value": "Job_1.__default",
+      "isReadOnly": true
+    },
+    "system.jobAttempt": {
+      "value": "1",
+      "isReadOnly": true
+    },
+    "System.JobPositionInPhase": {
+      "value": "1",
+      "isReadOnly": true
+    },
+    "System.TotalJobsInPhase": {
+      "value": "1",
+      "isReadOnly": true
+    },
+    "system.jobDisplayName": {
+      "value": "Agent job 1",
+      "isReadOnly": true
+    },
+    "system.jobId": {
+      "value": "275f1d19-1bd8-5591-b06b-07d489ea915a",
+      "isReadOnly": true
+    },
+    "system.jobName": {
+      "value": "__default",
+      "isReadOnly": true
+    },
+    "system.jobTimeout": {
+      "value": "60",
+      "isReadOnly": true
+    },
+    "agent.retainDefaultEncoding": {
+      "value": "false",
+      "isReadOnly": true
+    },
+    "agent.LogToBlobstorageService": {
+      "value": "true",
+      "isReadOnly": true
+    },
+    "agent.readOnlyVariables": {
+      "value": "true",
+      "isReadOnly": true
+    },
+    "agent.useWorkspaceId": {
+      "value": "true",
+      "isReadOnly": true
+    },
+    "system.postLinesSpeed": {
+      "value": "10000",
+      "isReadOnly": true
+    },
+    "agent.taskRestrictionsEnforcementMode": {
+      "value": "Enabled",
+      "isReadOnly": true
+    },
+    "agent.enableTaskRestrictionsTelemetry": {
+      "value": "true",
+      "isReadOnly": true
+    },
+    "agent.disablelogplugin.TestResultLogPlugin": {
+      "value": "true",
+      "isReadOnly": true
+    },
+    "agent.disablelogplugin.TestFilePublisherPlugin": {
+      "value": "true",
+      "isReadOnly": true
+    },
+    "build.repository.id": {
+      "value": "Syturio/TeslaDailySummary",
+      "isReadOnly": true
+    },
+    "build.repository.name": {
+      "value": "Syturio/TeslaDailySummary",
+      "isReadOnly": true
+    },
+    "build.repository.uri": {
+      "value": "https://github.com/Syturio/TeslaDailySummary",
+      "isReadOnly": true
+    },
+    "build.sourceVersionAuthor": {
+      "value": "[PII]",
+      "isReadOnly": true
+    }
+  },
+  "messageType": "PipelineAgentJobRequest",
+  "plan": {
+    "scopeIdentifier": "a93f10bb-af69-4a66-8379-6fe10f04b79f",
+    "planType": "Build",
+    "version": 17,
+    "planId": "cf8ec018-a846-4785-b9a8-4e94828bf279",
+    "planGroup": "Build:a93f10bb-af69-4a66-8379-6fe10f04b79f:7",
+    "artifactUri": "vstfs:///Build/Build/7",
+    "artifactLocation": null,
+    "definition": {
+      "_links": {
+        "web": {
+          "href": "https://dev.azure.com/upskillprojetoestagio/a93f10bb-af69-4a66-8379-6fe10f04b79f/_build/definition?definitionId=2"
+        },
+        "self": {
+          "href": "https://dev.azure.com/upskillprojetoestagio/a93f10bb-af69-4a66-8379-6fe10f04b79f/_apis/build/Definitions/2"
+        }
+      },
+      "id": 2,
+      "name": "Pipeline1"
+    },
+    "owner": {
+      "_links": {
+        "web": {
+          "href": "https://dev.azure.com/upskillprojetoestagio/a93f10bb-af69-4a66-8379-6fe10f04b79f/_build/results?buildId=7"
+        },
+        "self": {
+          "href": "https://dev.azure.com/upskillprojetoestagio/a93f10bb-af69-4a66-8379-6fe10f04b79f/_apis/build/Builds/7"
+        }
+      },
+      "id": 7,
+      "name": "7"
+    }
+  },
+  "timeline": {
+    "id": "cf8ec018-a846-4785-b9a8-4e94828bf279",
+    "changeId": 5,
+    "location": null
+  },
+  "jobId": "275f1d19-1bd8-5591-b06b-07d489ea915a",
+  "jobDisplayName": "Agent job 1",
+  "jobName": "__default",
+  "jobContainer": null,
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "AvatarUrl": "https://avatars.githubusercontent.com/u/13243329?v=4"
+        },
+        "id": "dc1d5a39-c336-4bda-bca8-eb5c8a4b234c",
+        "name": "GitHub connection 1",
+        "type": "github",
+        "owner": "Library",
+        "url": "https://github.com",
+        "createdBy": {
+          "displayName": "Tiago Alface",
+          "url": "https://spsprodweu3.vssps.visualstudio.com/A2fbc07f2-92dc-4113-88bb-1b3b290c26a3/_apis/Identities/92008ca0-4555-6d47-aac4-f398037e93dc",
+          "_links": {
+            "avatar": {
+              "href": "https://dev.azure.com/upskillprojetoestagio/_apis/GraphProfile/MemberAvatars/aad.OTIwMDhjYTAtNDU1NS03ZDQ3LWFhYzQtZjM5ODAzN2U5M2Rj"
+            }
+          },
+          "id": "92008ca0-4555-6d47-aac4-f398037e93dc",
+          "uniqueName": "tiago.alface.upskill@ipcbcampus.pt",
+          "imageUrl": "https://dev.azure.com/upskillprojetoestagio/_apis/GraphProfile/MemberAvatars/aad.OTIwMDhjYTAtNDU1NS03ZDQ3LWFhYzQtZjM5ODAzN2U5M2Rj",
+          "descriptor": "aad.OTIwMDhjYTAtNDU1NS03ZDQ3LWFhYzQtZjM5ODAzN2U5M2Rj"
+        },
+        "description": "",
+        "authorization": {
+          "parameters": {
+            "AccessToken": ***,
+            "ConfigurationId": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      },
+      {
+        "data": {
+          "subscriptionId": "9401ce7a-4200-4449-9a31-23058ea623f3",
+          "subscriptionName": "Azure para Estudantes",
+          "environment": "AzureCloud",
+          "scopeLevel": "Subscription",
+          "creationMode": "Automatic",
+          "azureSpnRoleAssignmentId": "11add561-2618-403d-982f-697afc6e3d56",
+          "azureSpnPermissions": "[{\"roleAssignmentId\":\"11add561-2618-403d-982f-697afc6e3d56\",\"resourceProvider\":\"Microsoft.RoleAssignment\",\"provisioned\":true}]",
+          "spnObjectId": "ae0779c2-2db7-4a2f-b788-bf9b9b972ede",
+          "appObjectId": "107cf1e1-7835-45d6-a939-414bf43df3f2",
+          "environmentUrl": "https://management.azure.com/",
+          "galleryUrl": "https://gallery.azure.com/",
+          "serviceManagementUrl": "https://management.core.windows.net/",
+          "resourceManagerUrl": "https://management.azure.com/",
+          "activeDirectoryAuthority": "https://login.microsoftonline.com/",
+          "environmentAuthorityUrl": "https://login.windows.net/",
+          "graphUrl": "https://graph.windows.net/",
+          "managementPortalUrl": "https://manage.windowsazure.com/",
+          "armManagementPortalUrl": "https://portal.azure.com/",
+          "activeDirectoryServiceEndpointResourceId": "https://management.core.windows.net/",
+          "sqlDatabaseDnsSuffix": ".database.windows.net",
+          "AzureKeyVaultDnsSuffix": "vault.azure.net",
+          "AzureKeyVaultServiceEndpointResourceId": "https://vault.azure.net",
+          "StorageEndpointSuffix": "core.windows.net",
+          "EnableAdfsAuthentication": "false"
+        },
+        "id": "ca5b1976-9100-4e44-9fa7-9daebe4c8ba3",
+        "name": "Azure para Estudantes (9401ce7a-4200-4449-9a31-23058ea623f3)",
+        "type": "azurerm",
+        "owner": "Library",
+        "url": "https://management.azure.com/",
+        "createdBy": {
+          "displayName": "Tiago Alface",
+          "url": "https://spsprodweu3.vssps.visualstudio.com/A2fbc07f2-92dc-4113-88bb-1b3b290c26a3/_apis/Identities/92008ca0-4555-6d47-aac4-f398037e93dc",
+          "_links": {
+            "avatar": {
+              "href": "https://dev.azure.com/upskillprojetoestagio/_apis/GraphProfile/MemberAvatars/aad.OTIwMDhjYTAtNDU1NS03ZDQ3LWFhYzQtZjM5ODAzN2U5M2Rj"
+            }
+          },
+          "id": "92008ca0-4555-6d47-aac4-f398037e93dc",
+          "uniqueName": "tiago.alface.upskill@ipcbcampus.pt",
+          "imageUrl": "https://dev.azure.com/upskillprojetoestagio/_apis/GraphProfile/MemberAvatars/aad.OTIwMDhjYTAtNDU1NS03ZDQ3LWFhYzQtZjM5ODAzN2U5M2Rj",
+          "descriptor": "aad.OTIwMDhjYTAtNDU1NS03ZDQ3LWFhYzQtZjM5ODAzN2U5M2Rj"
+        },
+        "description": "",
+        "authorization": {
+          "parameters": {
+            "tenantid": "***",
+            "serviceprincipalid": "***",
+            "authenticationType": "***",
+            "serviceprincipalkey": ***
+          },
+          "scheme": "ServicePrincipal"
+        },
+        "isShared": false,
+        "isReady": true,
+        "operationStatus": {
+          "state": "Ready",
+          "statusMessage": ""
+        }
+      },
+      {
+        "data": {
+          "ServerId": "691acfa7-acdb-4abd-899c-772800311b5e",
+          "ServerName": "upskillprojetoestagio"
+        },
+        "name": "SystemVssConnection",
+        "url": "https://dev.azure.com/upskillprojetoestagio/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": ***
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ],
+    "repositories": [
+      {
+        "properties": {
+          "id": "Syturio/TeslaDailySummary",
+          "type": "GitHub",
+          "version": "ea41852e7115b90cebf59868cff300e72b88884b",
+          "name": "Syturio/TeslaDailySummary",
+          "ref": "refs/heads/main",
+          "defaultBranch": "refs/heads/main",
+          "externalId": "383788038",
+          "system.istriggeringrepository": true,
+          "project": "a93f10bb-af69-4a66-8379-6fe10f04b79f",
+          "versionInfo": {
+            "author": "[PII]"
+          },
+          "url": "https://github.com:443/Syturio/TeslaDailySummary"
+        },
+        "alias": "__designer_repo",
+        "endpoint": {
+          "id": "dc1d5a39-c336-4bda-bca8-eb5c8a4b234c"
+        }
+      }
+    ]
+  }
+}
+[2021-07-07 18:46:22Z INFO JobRunner] Job ID 275f1d19-1bd8-5591-b06b-07d489ea915a
+[2021-07-07 18:46:22Z INFO JobRunner] Creating job server with URL: https://dev.azure.com/upskillprojetoestagio/
+[2021-07-07 18:46:22Z INFO VisualStudioServices] Starting operation Location.GetConnectionData
+[2021-07-07 18:46:22Z INFO Worker] Listening for cancel message from the channel.
+[2021-07-07 18:46:22Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2021-07-07 18:46:23Z INFO VisualStudioServices] Finished operation Location.GetConnectionData
+[2021-07-07 18:46:23Z INFO JobServerQueue] Start process web console line queue.
+[2021-07-07 18:46:23Z INFO JobServerQueue] Start process file upload queue.
+[2021-07-07 18:46:23Z INFO JobServerQueue] Start process timeline update queue.
+[2021-07-07 18:46:23Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\sytur\Desktop\AzureDevOps AGENT\bin\Agent.Worker.dll
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO ConfigurationStore] binPath: C:\Users\sytur\Desktop\AzureDevOps AGENT\bin
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO ConfigurationStore] RootFolder: C:\Users\sytur\Desktop\AzureDevOps AGENT
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known config file 'Agent': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.agent'
+[2021-07-07 18:46:23Z INFO ConfigurationStore] ConfigFilePath: C:\Users\sytur\Desktop\AzureDevOps AGENT\.agent
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.credentials'
+[2021-07-07 18:46:23Z INFO ConfigurationStore] CredFilePath: C:\Users\sytur\Desktop\AzureDevOps AGENT\.credentials
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known config file 'Service': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.service'
+[2021-07-07 18:46:23Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\sytur\Desktop\AzureDevOps AGENT\.service
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known config file 'Autologon': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.autologon'
+[2021-07-07 18:46:23Z INFO ConfigurationStore] AutoLogonSettingsFilePath: C:\Users\sytur\Desktop\AzureDevOps AGENT\.autologon
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known config file 'Options': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.options'
+[2021-07-07 18:46:23Z INFO ConfigurationStore] RuntimeOptionsFilePath: C:\Users\sytur\Desktop\AzureDevOps AGENT\.options
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known config file 'SetupInfo': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.setup_info'
+[2021-07-07 18:46:23Z INFO ConfigurationStore] SetupInfoFilePath: C:\Users\sytur\Desktop\AzureDevOps AGENT\.setup_info
+[2021-07-07 18:46:23Z INFO ConfigurationStore] Read setting file: 186 chars
+[2021-07-07 18:46:23Z INFO ExecutionContext] WorkspaceIdentifier 'dd5dd1a50c55daf9e4dc18e5f775656457cc9a29' created for repos Microsoft.VisualStudio.Services.Agent.Worker.Build.RepositoryTrackingInfo
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Diag': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_diag'
+[2021-07-07 18:46:23Z INFO JobRunner] Starting the job execution context.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO JobRunner] Validating directory permissions for: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Externals': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\externals'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'ServerOM': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\externals\vstsom'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Tools': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tool'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Temp': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_temp'
+[2021-07-07 18:46:23Z INFO JobRunner] Creating task server with https://dev.azure.com/upskillprojetoestagio/
+[2021-07-07 18:46:23Z INFO VisualStudioServices] Starting operation Location.GetConnectionData
+[2021-07-07 18:46:23Z INFO VisualStudioServices] Finished operation Location.GetConnectionData
+[2021-07-07 18:46:23Z INFO JobRunner] Getting job extension.
+[2021-07-07 18:46:23Z INFO ExtensionManager] Getting extensions for interface: 'Microsoft.VisualStudio.Services.Agent.Worker.IJobExtension'
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Build.BuildJobExtension, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Release.ReleaseJobExtension, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Release.DeploymentJobExtension, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Maintenance.MaintenanceJobExtension, Agent.Worker
+[2021-07-07 18:46:23Z INFO JobRunner] Initialize job. Getting all job steps.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Diag': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_diag'
+[2021-07-07 18:46:23Z INFO BuildJobExtension] Run initial step from extension BuildJobExtension.
+[2021-07-07 18:46:23Z INFO ExtensionManager] Getting extensions for interface: 'Microsoft.VisualStudio.Services.Agent.Worker.Build.ISourceProvider'
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Build.ExternalGitSourceProvider, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Build.GitHubSourceProvider, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Build.GitHubEnterpriseSourceProvider, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Build.BitbucketSourceProvider, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Build.SvnSourceProvider, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Build.TfsGitSourceProvider, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Build.TfsVCSourceProvider, Agent.Worker
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO BuildDirectoryManager] Checking if artifacts directory exists: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\a'
+[2021-07-07 18:46:23Z INFO BuildDirectoryManager] Creating artifacts directory.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO BuildDirectoryManager] Checking if test results directory exists: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\TestResults'
+[2021-07-07 18:46:23Z INFO BuildDirectoryManager] Creating test results directory.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO BuildDirectoryManager] Set repository path for repository __designer_repo to 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO BuildJobExtension] Checking repository name __designer_repo
+[2021-07-07 18:46:23Z INFO BuildJobExtension] Downloading task definitions.
+[2021-07-07 18:46:23Z INFO TaskManager] Skip download checkout task.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:23Z INFO TaskManager] Ensuring task exists: ID '5541a522-603c-47ad-91fc-a4b1d163081b', version '2.187.0', name 'DotNetCoreCLI', directory 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\DotNetCoreCLI_5541a522-603c-47ad-91fc-a4b1d163081b\2.187.0'.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:23Z INFO TaskManager] Ensuring task exists: ID 'd8b84976-e99a-4b86-b885-4849694435b0', version '2.186.0', name 'ArchiveFiles', directory 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\ArchiveFiles_d8b84976-e99a-4b86-b885-4849694435b0\2.186.0'.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:23Z INFO TaskManager] Ensuring task exists: ID '2ff763a7-ce83-4e1f-bc89-0ae63477cebe', version '1.186.0', name 'PublishBuildArtifacts', directory 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\PublishBuildArtifacts_2ff763a7-ce83-4e1f-bc89-0ae63477cebe\1.186.0'.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:23Z INFO TaskManager] Ensuring task exists: ID '501dd25d-1785-43e4-b4e5-a5c78ccc0573', version '1.187.0', name 'AzureFunctionApp', directory 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\AzureFunctionApp_501dd25d-1785-43e4-b4e5-a5c78ccc0573\1.187.0'.
+[2021-07-07 18:46:23Z INFO BuildJobExtension] Parsing all task's condition inputs.
+[2021-07-07 18:46:23Z INFO ExpressionManager] Parsing expression: <succeeded()>
+[2021-07-07 18:46:23Z INFO ExpressionManager] Parsing expression: <succeeded()>
+[2021-07-07 18:46:23Z INFO ExpressionManager] Parsing expression: <succeeded()>
+[2021-07-07 18:46:23Z INFO ExpressionManager] Parsing expression: <succeeded()>
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'TaskZips': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_taskzips'
+[2021-07-07 18:46:23Z INFO TaskManager] Loading task definition 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\DotNetCoreCLI_5541a522-603c-47ad-91fc-a4b1d163081b\2.187.0\task.json'.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'TaskZips': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_taskzips'
+[2021-07-07 18:46:23Z INFO TaskManager] Loading task definition 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\ArchiveFiles_d8b84976-e99a-4b86-b885-4849694435b0\2.186.0\task.json'.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'TaskZips': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_taskzips'
+[2021-07-07 18:46:23Z INFO TaskManager] Loading task definition 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\PublishBuildArtifacts_2ff763a7-ce83-4e1f-bc89-0ae63477cebe\1.186.0\task.json'.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'TaskZips': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_taskzips'
+[2021-07-07 18:46:23Z INFO TaskManager] Loading task definition 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\AzureFunctionApp_501dd25d-1785-43e4-b4e5-a5c78ccc0573\1.187.0\task.json'.
+[2021-07-07 18:46:23Z INFO BuildJobExtension] Adding pre-job step from extension.
+[2021-07-07 18:46:23Z INFO BuildJobExtension] Adding post-job step from extension.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Diag': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_diag'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Diag': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_diag'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Diag': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_diag'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Diag': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_diag'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Diag': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_diag'
+[2021-07-07 18:46:23Z INFO BuildJobExtension] Adding post-job steps from tasks.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Diag': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_diag'
+[2021-07-07 18:46:23Z INFO BuildJobExtension] Total accessible running process: 282.
+[2021-07-07 18:46:23Z INFO JobRunner] Total job steps: 6.
+[2021-07-07 18:46:23Z INFO JobRunner] Run all job steps.
+[2021-07-07 18:46:23Z INFO StepsRunner] Processing step: DisplayName='Checkout Syturio/TeslaDailySummary@main to s', ContinueOnError=False, Enabled=True
+[2021-07-07 18:46:23Z INFO ExpressionManager] Evaluating: SucceededNode()
+[2021-07-07 18:46:23Z INFO ExpressionManager] Result: True
+[2021-07-07 18:46:23Z INFO StepsRunner] Starting the step.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO StepsRunner] Which: 'chcp'
+[2021-07-07 18:46:23Z INFO StepsRunner] Location: 'C:\Windows\system32\chcp.COM'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper] Starting process:
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\chcp.COM'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper] OOM score adjustment is Linux-only.
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper] Process started with process id 9808, waiting for process exit.
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper] Exited process 9808 with exit code 0
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper] Finished process 9808 with exit code 0, and elapsed time 00:00:00.0134255.
+[2021-07-07 18:46:23Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:23Z INFO TaskRunner] Get handler data for target platform Windows
+[2021-07-07 18:46:23Z INFO TaskRunner] Handler data is of type Microsoft.VisualStudio.Services.Agent.Worker.AgentPluginHandlerData
+[2021-07-07 18:46:23Z INFO ExtensionManager] Getting extensions for interface: 'Microsoft.VisualStudio.Services.Agent.Worker.IWorkerCommandExtension'
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.TaskCommandExtension, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Build.ArtifactCommandExtension, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Build.BuildCommandExtension, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.CodeCoverage.CodeCoverageCommandExtension, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.TestResults.ResultsCommandExtension, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Telemetry.TelemetryCommandExtension, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.Release.ReleaseCommandExtension, Agent.Worker
+[2021-07-07 18:46:23Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Worker.PluginInternalCommandExtension, Agent.Worker
+[2021-07-07 18:46:23Z INFO WorkerCommandManager] Register command extension for area task
+[2021-07-07 18:46:23Z INFO WorkerCommandManager] Register command extension for area artifact
+[2021-07-07 18:46:23Z INFO WorkerCommandManager] Register command extension for area build
+[2021-07-07 18:46:23Z INFO WorkerCommandManager] Register command extension for area codecoverage
+[2021-07-07 18:46:23Z INFO WorkerCommandManager] Register command extension for area results
+[2021-07-07 18:46:23Z INFO WorkerCommandManager] Register command extension for area telemetry
+[2021-07-07 18:46:23Z INFO WorkerCommandManager] Register command extension for area release
+[2021-07-07 18:46:23Z INFO WorkerCommandManager] Register command extension for area plugininternal
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.Repository.CheckoutTask, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id '6d15af64-176c-496d-b583-fd2ae21d4df4' (main).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.Repository.CleanupTask, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id '6d15af64-176c-496d-b583-fd2ae21d4df4' (post).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.PipelineArtifact.DownloadPipelineArtifactTask, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id '61f2a582-95ae-4948-b34d-a1b3c4f6a737' (main).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.PipelineArtifact.PublishPipelineArtifactTask, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id 'ecdc45f6-832d-4ad9-b52b-ee49e94659be' (main).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.PipelineArtifact.PublishPipelineArtifactTaskV1, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id 'ecdc45f6-832d-4ad9-b52b-ee49e94659be' (main).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.PipelineArtifact.DownloadPipelineArtifactTaskV1, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id '61f2a582-95ae-4948-b34d-a1b3c4f6a737' (main).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.PipelineArtifact.DownloadPipelineArtifactTaskV1_1_0, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id '61f2a582-95ae-4948-b34d-a1b3c4f6a737' (main).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.PipelineCache.SavePipelineCacheV0, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id 'd53ccab4-555e-4494-9d06-11db043fb4a9' (post).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.PipelineCache.RestorePipelineCacheV0, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id 'd53ccab4-555e-4494-9d06-11db043fb4a9' (main).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.PipelineArtifact.DownloadPipelineArtifactTaskV1_1_1, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id '61f2a582-95ae-4948-b34d-a1b3c4f6a737' (main).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.PipelineArtifact.DownloadPipelineArtifactTaskV1_1_2, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id '61f2a582-95ae-4948-b34d-a1b3c4f6a737' (main).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.PipelineArtifact.DownloadPipelineArtifactTaskV1_1_3, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id '61f2a582-95ae-4948-b34d-a1b3c4f6a737' (main).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.PipelineArtifact.DownloadPipelineArtifactTaskV2_0_0, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id '61f2a582-95ae-4948-b34d-a1b3c4f6a737' (main).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.PipelineArtifact.PublishPipelineArtifactTaskV0_140_0, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id 'ecdc45f6-832d-4ad9-b52b-ee49e94659be' (main).
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Load task plugin from 'Agent.Plugins.BuildArtifacts.DownloadBuildArtifactTaskV1_0_0, Agent.Plugins'.
+[2021-07-07 18:46:23Z INFO AgentPluginManager] Loaded task plugin id 'a433f589-fce1-4460-9ee6-44a624aeb1fb' (main).
+[2021-07-07 18:46:23Z INFO WorkerCommandManager] Enable plugin internal command extension.
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper] Starting process:
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin\Agent.PluginHost.exe'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Arguments: 'task "Agent.Plugins.Repository.CheckoutTask, Agent.Plugins"'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Require exit code zero: 'True'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'True'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper] OOM score adjustment is Linux-only.
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper] Process started with process id 32168, waiting for process exit.
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper] Close STDIN after the first redirect finished.
+[2021-07-07 18:46:23Z INFO ProcessInvokerWrapper] STDIN stream write finished.
+[2021-07-07 18:46:23Z INFO JobServerQueue] Try to append 1 batches web console lines for record '275f1d19-1bd8-5591-b06b-07d489ea915a', success rate: 1/1.
+[2021-07-07 18:46:24Z INFO VisualStudioServices] Starting operation Location.GetConnectionData
+[2021-07-07 18:46:24Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7336f0ca-df35-432d-a255-8205d30378b1', success rate: 1/1.
+[2021-07-07 18:46:24Z INFO VisualStudioServices] Finished operation Location.GetConnectionData
+[2021-07-07 18:46:24Z INFO VisualStudioServices] Starting operation Location.GetConnectionData
+[2021-07-07 18:46:24Z INFO JobServerQueue] Try to append 1 batches web console lines for record '771d55ec-34a7-5ddd-398e-3e8e57b4f3f0', success rate: 1/1.
+[2021-07-07 18:46:24Z INFO VisualStudioServices] Finished operation Location.GetConnectionData
+[2021-07-07 18:46:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '771d55ec-34a7-5ddd-398e-3e8e57b4f3f0', success rate: 1/1.
+[2021-07-07 18:46:25Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-07-07 18:46:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '771d55ec-34a7-5ddd-398e-3e8e57b4f3f0', success rate: 1/1.
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] Exited process 32168 with exit code 0
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] Finished process 32168 with exit code 0, and elapsed time 00:00:02.1714544.
+[2021-07-07 18:46:25Z INFO WorkerCommandManager] Disable plugin internal command extension.
+[2021-07-07 18:46:25Z INFO StepsRunner] Step result: 
+[2021-07-07 18:46:25Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-07-07 18:46:25Z INFO StepsRunner] Current state: job state = ''
+[2021-07-07 18:46:25Z INFO StepsRunner] Processing step: DisplayName='Build project', ContinueOnError=False, Enabled=True
+[2021-07-07 18:46:25Z INFO ExpressionManager] Evaluating: succeeded()
+[2021-07-07 18:46:25Z INFO ExpressionManager] Result: True
+[2021-07-07 18:46:25Z INFO StepsRunner] Starting the step.
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:25Z INFO StepsRunner] Which: 'chcp'
+[2021-07-07 18:46:25Z INFO StepsRunner] Location: 'C:\Windows\system32\chcp.COM'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] Starting process:
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\chcp.COM'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] OOM score adjustment is Linux-only.
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] Process started with process id 28604, waiting for process exit.
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] Exited process 28604 with exit code 0
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] Finished process 28604 with exit code 0, and elapsed time 00:00:00.0111112.
+[2021-07-07 18:46:25Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'TaskZips': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_taskzips'
+[2021-07-07 18:46:25Z INFO TaskManager] Loading task definition 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\DotNetCoreCLI_5541a522-603c-47ad-91fc-a4b1d163081b\2.187.0\task.json'.
+[2021-07-07 18:46:25Z INFO TaskRunner] Get handler data for target platform Windows
+[2021-07-07 18:46:25Z INFO TaskRunner] Handler data is of type Microsoft.VisualStudio.Services.Agent.Worker.Node10HandlerData
+[2021-07-07 18:46:25Z INFO ExtensionManager] Getting extensions for interface: 'Microsoft.VisualStudio.Services.Agent.Worker.IJobExtension'
+[2021-07-07 18:46:25Z INFO ExtensionManager] Getting extensions for interface: 'Microsoft.VisualStudio.Services.Agent.Worker.Build.ISourceProvider'
+[2021-07-07 18:46:25Z INFO BuildJobExtension] Build JobExtension resolving path use source provide: 
+[2021-07-07 18:46:25Z INFO BuildJobExtension] The Default Path Root of Build JobExtension is repository.path: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s
+[2021-07-07 18:46:25Z INFO BuildJobExtension] After prefix Default Path Root provide by JobExtension: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s
+[2021-07-07 18:46:25Z INFO BuildJobExtension] Return absolute path after prefix DefaultPathRoot: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s
+[2021-07-07 18:46:25Z INFO TaskRunner] Build JobExtension resolved a rooted path:: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s
+[2021-07-07 18:46:25Z INFO TaskRunner] The original input is a rooted path, return absolute path: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\a\*.nupkg
+[2021-07-07 18:46:25Z INFO ExtensionManager] Getting extensions for interface: 'Microsoft.VisualStudio.Services.Agent.Worker.IJobExtension'
+[2021-07-07 18:46:25Z INFO ExtensionManager] Getting extensions for interface: 'Microsoft.VisualStudio.Services.Agent.Worker.Build.ISourceProvider'
+[2021-07-07 18:46:25Z INFO BuildJobExtension] Build JobExtension resolving path use source provide: **\*.csproj
+[2021-07-07 18:46:25Z INFO BuildJobExtension] The Default Path Root of Build JobExtension is repository.path: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s
+[2021-07-07 18:46:25Z INFO BuildJobExtension] After prefix Default Path Root provide by JobExtension: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s\**\*.csproj
+[2021-07-07 18:46:25Z INFO BuildJobExtension] Return absolute path after prefix DefaultPathRoot: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s\**\*.csproj
+[2021-07-07 18:46:25Z INFO TaskRunner] Build JobExtension resolved a rooted path:: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s\**\*.csproj
+[2021-07-07 18:46:25Z INFO TaskRunner] The original input is a rooted path, return absolute path: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\a
+[2021-07-07 18:46:25Z INFO ExtensionManager] Getting extensions for interface: 'Microsoft.VisualStudio.Services.Agent.Worker.IJobExtension'
+[2021-07-07 18:46:25Z INFO ExtensionManager] Getting extensions for interface: 'Microsoft.VisualStudio.Services.Agent.Worker.Build.ISourceProvider'
+[2021-07-07 18:46:25Z INFO BuildJobExtension] Build JobExtension resolving path use source provide: 
+[2021-07-07 18:46:25Z INFO BuildJobExtension] The Default Path Root of Build JobExtension is repository.path: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s
+[2021-07-07 18:46:25Z INFO BuildJobExtension] After prefix Default Path Root provide by JobExtension: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s
+[2021-07-07 18:46:25Z INFO BuildJobExtension] Return absolute path after prefix DefaultPathRoot: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s
+[2021-07-07 18:46:25Z INFO TaskRunner] Build JobExtension resolved a rooted path:: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s
+[2021-07-07 18:46:25Z INFO NodeHandler] Inspect node_modules folder, make sure vsts-task-lib doesn't overwrite String.startsWith/endsWith.
+[2021-07-07 18:46:25Z INFO NodeHandler] This task has already been scanned and corrected, no more operation needed.
+[2021-07-07 18:46:25Z INFO NodeHandler] Task.json has node10 handler data: True, use node10 for node tasks: False
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:25Z INFO HostContext] Well known directory 'Externals': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\externals'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] Starting process:
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\externals\node10\bin\node.exe'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\DotNetCoreCLI_5541a522-603c-47ad-91fc-a4b1d163081b\2.187.0\dotnetcore.js"'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Require exit code zero: 'True'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] OOM score adjustment is Linux-only.
+[2021-07-07 18:46:25Z INFO ProcessInvokerWrapper] Process started with process id 31840, waiting for process exit.
+[2021-07-07 18:46:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '771d55ec-34a7-5ddd-398e-3e8e57b4f3f0', success rate: 1/1.
+[2021-07-07 18:46:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '37ff9366-b26f-54de-6861-3886e8f3e5fc', success rate: 1/1.
+[2021-07-07 18:46:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '37ff9366-b26f-54de-6861-3886e8f3e5fc', success rate: 1/1.
+[2021-07-07 18:46:27Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-07-07 18:46:27Z INFO JobServerQueue] Try to append 1 batches web console lines for record '37ff9366-b26f-54de-6861-3886e8f3e5fc', success rate: 1/1.
+[2021-07-07 18:46:28Z INFO JobServerQueue] Try to append 1 batches web console lines for record '37ff9366-b26f-54de-6861-3886e8f3e5fc', success rate: 1/1.
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] Exited process 31840 with exit code 0
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] Finished process 31840 with exit code 0, and elapsed time 00:00:03.6244373.
+[2021-07-07 18:46:29Z INFO StepsRunner] Step result: 
+[2021-07-07 18:46:29Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-07-07 18:46:29Z INFO StepsRunner] Current state: job state = ''
+[2021-07-07 18:46:29Z INFO StepsRunner] Processing step: DisplayName='Archive files', ContinueOnError=False, Enabled=True
+[2021-07-07 18:46:29Z INFO ExpressionManager] Evaluating: succeeded()
+[2021-07-07 18:46:29Z INFO ExpressionManager] Result: True
+[2021-07-07 18:46:29Z INFO StepsRunner] Starting the step.
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:29Z INFO StepsRunner] Which: 'chcp'
+[2021-07-07 18:46:29Z INFO StepsRunner] Location: 'C:\Windows\system32\chcp.COM'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] Starting process:
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\chcp.COM'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] OOM score adjustment is Linux-only.
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] Process started with process id 8068, waiting for process exit.
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] Exited process 8068 with exit code 0
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] Finished process 8068 with exit code 0, and elapsed time 00:00:00.0086844.
+[2021-07-07 18:46:29Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'TaskZips': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_taskzips'
+[2021-07-07 18:46:29Z INFO TaskManager] Loading task definition 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\ArchiveFiles_d8b84976-e99a-4b86-b885-4849694435b0\2.186.0\task.json'.
+[2021-07-07 18:46:29Z INFO TaskRunner] Get handler data for target platform Windows
+[2021-07-07 18:46:29Z INFO TaskRunner] Handler data is of type Microsoft.VisualStudio.Services.Agent.Worker.Node10HandlerData
+[2021-07-07 18:46:29Z INFO ExtensionManager] Getting extensions for interface: 'Microsoft.VisualStudio.Services.Agent.Worker.IJobExtension'
+[2021-07-07 18:46:29Z INFO ExtensionManager] Getting extensions for interface: 'Microsoft.VisualStudio.Services.Agent.Worker.Build.ISourceProvider'
+[2021-07-07 18:46:29Z INFO BuildJobExtension] Build JobExtension resolving path use source provide: publish_output\
+[2021-07-07 18:46:29Z INFO BuildJobExtension] The Default Path Root of Build JobExtension is repository.path: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s
+[2021-07-07 18:46:29Z INFO BuildJobExtension] After prefix Default Path Root provide by JobExtension: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s\publish_output\
+[2021-07-07 18:46:29Z INFO BuildJobExtension] Return absolute path after prefix DefaultPathRoot: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s\publish_output\
+[2021-07-07 18:46:29Z INFO TaskRunner] Build JobExtension resolved a rooted path:: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s\publish_output\
+[2021-07-07 18:46:29Z INFO TaskRunner] The original input is a rooted path, return absolute path: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\a\7.zip
+[2021-07-07 18:46:29Z INFO NodeHandler] Inspect node_modules folder, make sure vsts-task-lib doesn't overwrite String.startsWith/endsWith.
+[2021-07-07 18:46:29Z INFO NodeHandler] This task has already been scanned and corrected, no more operation needed.
+[2021-07-07 18:46:29Z INFO NodeHandler] Task.json has node10 handler data: True, use node10 for node tasks: False
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:29Z INFO HostContext] Well known directory 'Externals': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\externals'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] Starting process:
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\externals\node10\bin\node.exe'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\ArchiveFiles_d8b84976-e99a-4b86-b885-4849694435b0\2.186.0\archivefiles.js"'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Require exit code zero: 'True'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] OOM score adjustment is Linux-only.
+[2021-07-07 18:46:29Z INFO ProcessInvokerWrapper] Process started with process id 18596, waiting for process exit.
+[2021-07-07 18:46:29Z INFO JobServerQueue] Try to append 1 batches web console lines for record '37ff9366-b26f-54de-6861-3886e8f3e5fc', success rate: 1/1.
+[2021-07-07 18:46:29Z INFO JobServerQueue] Try to append 1 batches web console lines for record '96626e74-5332-523c-05f6-e27aa60d9625', success rate: 1/1.
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] Exited process 18596 with exit code 0
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] Finished process 18596 with exit code 0, and elapsed time 00:00:00.5147117.
+[2021-07-07 18:46:30Z INFO StepsRunner] Step result: Succeeded
+[2021-07-07 18:46:30Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-07-07 18:46:30Z INFO StepsRunner] Current state: job state = ''
+[2021-07-07 18:46:30Z INFO StepsRunner] Processing step: DisplayName='Publish Artifact: drop', ContinueOnError=False, Enabled=True
+[2021-07-07 18:46:30Z INFO ExpressionManager] Evaluating: succeeded()
+[2021-07-07 18:46:30Z INFO ExpressionManager] Result: True
+[2021-07-07 18:46:30Z INFO StepsRunner] Starting the step.
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:30Z INFO StepsRunner] Which: 'chcp'
+[2021-07-07 18:46:30Z INFO StepsRunner] Location: 'C:\Windows\system32\chcp.COM'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] Starting process:
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\chcp.COM'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] OOM score adjustment is Linux-only.
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] Process started with process id 13604, waiting for process exit.
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] Exited process 13604 with exit code 0
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] Finished process 13604 with exit code 0, and elapsed time 00:00:00.0140857.
+[2021-07-07 18:46:30Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'TaskZips': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_taskzips'
+[2021-07-07 18:46:30Z INFO TaskManager] Loading task definition 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\PublishBuildArtifacts_2ff763a7-ce83-4e1f-bc89-0ae63477cebe\1.186.0\task.json'.
+[2021-07-07 18:46:30Z INFO TaskRunner] Get handler data for target platform Windows
+[2021-07-07 18:46:30Z INFO TaskRunner] Handler data is of type Microsoft.VisualStudio.Services.Agent.Worker.Node10HandlerData
+[2021-07-07 18:46:30Z INFO TaskRunner] The original input is a rooted path, return absolute path: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\a
+[2021-07-07 18:46:30Z INFO NodeHandler] Inspect node_modules folder, make sure vsts-task-lib doesn't overwrite String.startsWith/endsWith.
+[2021-07-07 18:46:30Z INFO NodeHandler] This task has already been scanned and corrected, no more operation needed.
+[2021-07-07 18:46:30Z INFO NodeHandler] Task.json has node10 handler data: True, use node10 for node tasks: False
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:30Z INFO HostContext] Well known directory 'Externals': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\externals'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] Starting process:
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\externals\node10\bin\node.exe'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\PublishBuildArtifacts_2ff763a7-ce83-4e1f-bc89-0ae63477cebe\1.186.0\publishbuildartifacts.js"'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Require exit code zero: 'True'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] OOM score adjustment is Linux-only.
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] Process started with process id 24796, waiting for process exit.
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] Exited process 24796 with exit code 0
+[2021-07-07 18:46:30Z INFO ProcessInvokerWrapper] Finished process 24796 with exit code 0, and elapsed time 00:00:00.3063224.
+[2021-07-07 18:46:30Z INFO AsyncCommandContext] Start flush buffered output.
+[2021-07-07 18:46:30Z INFO JobServerQueue] Try to append 1 batches web console lines for record '96626e74-5332-523c-05f6-e27aa60d9625', success rate: 1/1.
+[2021-07-07 18:46:30Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ff44e5f8-4d79-5f05-21e3-42769c983609', success rate: 1/1.
+[2021-07-07 18:46:32Z INFO VisualStudioServices] Starting operation Location.GetConnectionData
+[2021-07-07 18:46:33Z INFO VisualStudioServices] Finished operation Location.GetConnectionData
+[2021-07-07 18:46:33Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ff44e5f8-4d79-5f05-21e3-42769c983609', success rate: 1/1.
+[2021-07-07 18:46:33Z INFO AsyncCommandContext] Finsh flush buffered output.
+[2021-07-07 18:46:33Z INFO AsyncCommandContext] Wait till async command task to finish.
+[2021-07-07 18:46:33Z INFO StepsRunner] Step result: 
+[2021-07-07 18:46:33Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2021-07-07 18:46:33Z INFO StepsRunner] Current state: job state = ''
+[2021-07-07 18:46:33Z INFO StepsRunner] Processing step: DisplayName='Azure Function App Deploy: alfacefunction2', ContinueOnError=False, Enabled=True
+[2021-07-07 18:46:33Z INFO ExpressionManager] Evaluating: succeeded()
+[2021-07-07 18:46:33Z INFO ExpressionManager] Result: True
+[2021-07-07 18:46:33Z INFO StepsRunner] Starting the step.
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:33Z INFO StepsRunner] Which: 'chcp'
+[2021-07-07 18:46:33Z INFO StepsRunner] Location: 'C:\Windows\system32\chcp.COM'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper] Starting process:
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\chcp.COM'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper] OOM score adjustment is Linux-only.
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper] Process started with process id 14184, waiting for process exit.
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper] Exited process 14184 with exit code 0
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper] Finished process 14184 with exit code 0, and elapsed time 00:00:00.0089930.
+[2021-07-07 18:46:33Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'Tasks': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks'
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'TaskZips': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_taskzips'
+[2021-07-07 18:46:33Z INFO TaskManager] Loading task definition 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\AzureFunctionApp_501dd25d-1785-43e4-b4e5-a5c78ccc0573\1.187.0\task.json'.
+[2021-07-07 18:46:33Z INFO TaskRunner] Get handler data for target platform Windows
+[2021-07-07 18:46:33Z INFO TaskRunner] Handler data is of type Microsoft.VisualStudio.Services.Agent.Worker.Node10HandlerData
+[2021-07-07 18:46:33Z INFO TaskRunner] The original input is a rooted path, return absolute path: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\a\*.zip
+[2021-07-07 18:46:33Z INFO NodeHandler] Inspect node_modules folder, make sure vsts-task-lib doesn't overwrite String.startsWith/endsWith.
+[2021-07-07 18:46:33Z INFO NodeHandler] This task has already been scanned and corrected, no more operation needed.
+[2021-07-07 18:46:33Z INFO NodeHandler] Task.json has node10 handler data: True, use node10 for node tasks: False
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:33Z INFO HostContext] Well known directory 'Externals': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\externals'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper] Starting process:
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\externals\node10\bin\node.exe'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_tasks\AzureFunctionApp_501dd25d-1785-43e4-b4e5-a5c78ccc0573\1.187.0\azurermwebappdeployment.js"'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\2\s'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Require exit code zero: 'True'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper] OOM score adjustment is Linux-only.
+[2021-07-07 18:46:33Z INFO ProcessInvokerWrapper] Process started with process id 24728, waiting for process exit.
+[2021-07-07 18:46:33Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2021-07-07 18:46:33Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ff44e5f8-4d79-5f05-21e3-42769c983609', success rate: 1/1.
+[2021-07-07 18:46:33Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6290e2b4-ee47-5378-4478-7c99dadc88fd', success rate: 1/1.
+[2021-07-07 18:46:34Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6290e2b4-ee47-5378-4478-7c99dadc88fd', success rate: 1/1.
+[2021-07-07 18:46:35Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2021-07-07 18:46:35Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6290e2b4-ee47-5378-4478-7c99dadc88fd', success rate: 1/1.
+[2021-07-07 18:46:36Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6290e2b4-ee47-5378-4478-7c99dadc88fd', success rate: 1/1.
+[2021-07-07 18:46:37Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6290e2b4-ee47-5378-4478-7c99dadc88fd', success rate: 1/1.
+[2021-07-07 18:46:40Z INFO JobServerQueue] Stop aggressive process web console line queue.
+[2021-07-07 18:46:59Z INFO Worker] Cancellation/Shutdown message received.
+[2021-07-07 18:46:59Z INFO HostContext] Agent will be shutdown for UserCancelled
+[2021-07-07 18:46:59Z INFO StepsRunner] Cancel current running step.
+[2021-07-07 18:46:59Z INFO ProcessInvokerWrapper] Sending CTRL_C to process 24728.
+[2021-07-07 18:46:59Z INFO ProcessInvokerWrapper] Successfully sent CTRL_C to process 24728.
+[2021-07-07 18:46:59Z INFO ProcessInvokerWrapper] Waiting for process exit or 7.5 seconds after CTRL_C signal fired.
+[2021-07-07 18:46:59Z INFO ProcessInvokerWrapper] Ignore Ctrl+C to current process.
+[2021-07-07 18:46:59Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:59Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2021-07-07 18:46:59Z INFO ProcessInvokerWrapper] Exited process 24728 with exit code -1073741510
+[2021-07-07 18:46:59Z INFO ProcessInvokerWrapper] Finished process 24728 with exit code -1073741510, and elapsed time 00:00:26.6364440.
+[2021-07-07 18:46:59Z ERR  StepsRunner] Caught cancellation exception from step: System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.VisualStudio.Services.Agent.Util.ProcessInvoker.ExecuteAsync(String workingDirectory, String fileName, String arguments, IDictionary`2 environment, Boolean requireExitCodeZero, Encoding outputEncoding, Boolean killProcessOnCancel, InputQueue`1 redirectStandardIn, Boolean inheritConsoleHandler, Boolean keepStandardInOpen, Boolean highPriorityProcess, CancellationToken cancellationToken)
+   at Microsoft.VisualStudio.Services.Agent.ProcessInvokerWrapper.ExecuteAsync(String workingDirectory, String fileName, String arguments, IDictionary`2 environment, Boolean requireExitCodeZero, Encoding outputEncoding, Boolean killProcessOnCancel, InputQueue`1 redirectStandardIn, Boolean inheritConsoleHandler, Boolean keepStandardInOpen, Boolean highPriorityProcess, CancellationToken cancellationToken)
+   at Microsoft.VisualStudio.Services.Agent.Worker.Handlers.DefaultStepHost.ExecuteAsync(String workingDirectory, String fileName, String arguments, IDictionary`2 environment, Boolean requireExitCodeZero, Encoding outputEncoding, Boolean killProcessOnCancel, Boolean inheritConsoleHandler, CancellationToken cancellationToken)
+   at Microsoft.VisualStudio.Services.Agent.Worker.Handlers.NodeHandler.RunAsync()
+   at Microsoft.VisualStudio.Services.Agent.Worker.TaskRunner.RunAsync()
+   at Microsoft.VisualStudio.Services.Agent.Worker.StepsRunner.RunStepAsync(IStep step, CancellationToken jobCancellationToken)
+[2021-07-07 18:46:59Z INFO StepsRunner] Step result: Canceled
+[2021-07-07 18:46:59Z INFO StepsRunner] No need for updating job result with current step result 'Canceled'.
+[2021-07-07 18:46:59Z INFO StepsRunner] Current state: job state = 'Canceled'
+[2021-07-07 18:46:59Z INFO StepsRunner] Processing step: DisplayName='Checkout Syturio/TeslaDailySummary@main to s', ContinueOnError=False, Enabled=True
+[2021-07-07 18:46:59Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2021-07-07 18:46:59Z INFO JobRunner] Finalize job.
+[2021-07-07 18:46:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:59Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:59Z INFO HostContext] Well known directory 'Diag': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_diag'
+[2021-07-07 18:46:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 18:46:59Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 18:46:59Z INFO HostContext] Well known directory 'Work': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\_work'
+[2021-07-07 18:46:59Z INFO BuildJobExtension] Total accessible running process: 277.
+[2021-07-07 18:46:59Z INFO BuildJobExtension] Inspecting process environment variables. PID: 25224 (SearchProtocolHost)
+[2021-07-07 18:46:59Z INFO BuildJobExtension] Inspecting process environment variables. PID: 19852 (dotnet)
+[2021-07-07 18:46:59Z INFO BuildJobExtension] Inspecting process environment variables. PID: 17916 (conhost)
+[2021-07-07 18:46:59Z INFO BuildJobExtension] Inspecting process environment variables. PID: 27868 (svchost)
+[2021-07-07 18:46:59Z WARN BuildJobExtension] Ignore exception during read process environment variables: Acesso negado.
+[2021-07-07 18:46:59Z INFO JobRunner] Job result after all job steps finish: Canceled
+[2021-07-07 18:46:59Z INFO JobRunner] Completing the job execution context.
+[2021-07-07 18:46:59Z INFO JobRunner] Shutting down the job server queue.
+[2021-07-07 18:46:59Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2021-07-07 18:46:59Z INFO ProcessInvokerWrapper] Process exited successfully.
+[2021-07-07 18:46:59Z INFO ProcessInvokerWrapper] Process cancelled successfully through Ctrl+C/SIGINT.
+[2021-07-07 18:47:00Z INFO JobServerQueue] All queue process task stopped.
+[2021-07-07 18:47:00Z INFO JobServerQueue] Try to append 1 batches web console lines for record '275f1d19-1bd8-5591-b06b-07d489ea915a', success rate: 1/1.
+[2021-07-07 18:47:00Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6290e2b4-ee47-5378-4478-7c99dadc88fd', success rate: 1/1.
+[2021-07-07 18:47:00Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3579641f-aca9-43c1-8101-5ef26c84fa64', success rate: 1/1.
+[2021-07-07 18:47:00Z INFO JobServerQueue] Web console line queue drained.
+[2021-07-07 18:47:00Z INFO JobServerQueue] Uploading 3 files in one shot.
+[2021-07-07 18:47:02Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2021-07-07 18:47:02Z INFO JobServerQueue] File upload queue drained.
+[2021-07-07 18:47:03Z INFO JobServerQueue] Timeline update queue drained.
+[2021-07-07 18:47:03Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2021-07-07 18:47:03Z INFO TempDirectoryManager] Cleaning agent temp folder: C:\Users\sytur\Desktop\AzureDevOps AGENT\_work\_temp
+[2021-07-07 18:47:03Z INFO JobRunner] Raising job completed event.

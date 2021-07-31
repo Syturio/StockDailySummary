@@ -1,0 +1,523 @@
+{
+    "properties": {
+        "quoteResponse": {
+            "properties": {
+                "error": {},
+                "result": {
+                    "items": {
+                        "properties": {
+                            "ask": {
+                                "type": "number"
+                            },
+                            "askSize": {
+                                "type": "number"
+                            },
+                            "averageDailyVolume10Day": {
+                                "type": "number"
+                            },
+                            "averageDailyVolume3Month": {
+                                "type": "number"
+                            },
+                            "beta": {
+                                "type": "number"
+                            },
+                            "bid": {
+                                "type": "number"
+                            },
+                            "bidSize": {
+                                "type": "number"
+                            },
+                            "bookValue": {
+                                "type": "number"
+                            },
+                            "components": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "currency": {
+                                "type": "string"
+                            },
+                            "dividendsPerShare": {
+                                "type": "number"
+                            },
+                            "earningsTimestamp": {
+                                "type": "number"
+                            },
+                            "earningsTimestampEnd": {
+                                "type": "number"
+                            },
+                            "earningsTimestampStart": {
+                                "type": "number"
+                            },
+                            "ebitda": {
+                                "type": "number"
+                            },
+                            "epsCurrentYear": {
+                                "type": "number"
+                            },
+                            "epsForward": {
+                                "type": "number"
+                            },
+                            "epsNextQuarter": {
+                                "type": "number"
+                            },
+                            "epsTrailingTwelveMonths": {
+                                "type": "number"
+                            },
+                            "esgPopulated": {
+                                "type": "boolean"
+                            },
+                            "exchange": {
+                                "type": "string"
+                            },
+                            "exchangeDataDelayedBy": {
+                                "type": "number"
+                            },
+                            "exchangeTimezoneName": {
+                                "type": "string"
+                            },
+                            "exchangeTimezoneShortName": {
+                                "type": "string"
+                            },
+                            "fiftyDayAverage": {
+                                "type": "number"
+                            },
+                            "fiftyDayAverageChange": {
+                                "type": "number"
+                            },
+                            "fiftyDayAverageChangePercent": {
+                                "type": "number"
+                            },
+                            "fiftyTwoWeekHigh": {
+                                "type": "number"
+                            },
+                            "fiftyTwoWeekHighChange": {
+                                "type": "number"
+                            },
+                            "fiftyTwoWeekHighChangePercent": {
+                                "type": "number"
+                            },
+                            "fiftyTwoWeekLow": {
+                                "type": "number"
+                            },
+                            "fiftyTwoWeekLowChange": {
+                                "type": "number"
+                            },
+                            "fiftyTwoWeekLowChangePercent": {
+                                "type": "number"
+                            },
+                            "fiftyTwoWeekRange": {
+                                "type": "string"
+                            },
+                            "firstTradeDateMilliseconds": {
+                                "type": "number"
+                            },
+                            "floatShares": {
+                                "type": "number"
+                            },
+                            "forwardPE": {
+                                "type": "number"
+                            },
+                            "fullExchangeName": {
+                                "type": "string"
+                            },
+                            "gmtOffSetMilliseconds": {
+                                "type": "number"
+                            },
+                            "heldPercentInsiders": {
+                                "type": "number"
+                            },
+                            "heldPercentInstitutions": {
+                                "type": "number"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "longName": {
+                                "type": "string"
+                            },
+                            "market": {
+                                "type": "string"
+                            },
+                            "marketCap": {
+                                "type": "number"
+                            },
+                            "marketState": {
+                                "type": "string"
+                            },
+                            "messageBoardId": {
+                                "type": "string"
+                            },
+                            "pageViews": {
+                                "properties": {
+                                    "longTermTrend": {
+                                        "type": "string"
+                                    },
+                                    "midTermTrend": {
+                                        "type": "string"
+                                    },
+                                    "shortTermTrend": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "pegRatio": {
+                                "type": "number"
+                            },
+                            "postMarketChange": {
+                                "type": "number"
+                            },
+                            "postMarketChangePercent": {
+                                "type": "number"
+                            },
+                            "postMarketPrice": {
+                                "type": "number"
+                            },
+                            "postMarketTime": {
+                                "type": "number"
+                            },
+                            "preMarketChange": {
+                                "type": "number"
+                            },
+                            "preMarketChangePercent": {
+                                "type": "number"
+                            },
+                            "preMarketPrice": {
+                                "type": "number"
+                            },
+                            "preMarketTime": {
+                                "type": "number"
+                            },
+                            "priceEpsCurrentYear": {
+                                "type": "number"
+                            },
+                            "priceEpsNextQuarter": {
+                                "type": "number"
+                            },
+                            "priceHint": {
+                                "type": "number"
+                            },
+                            "priceToBook": {
+                                "type": "number"
+                            },
+                            "priceToSales": {
+                                "type": "number"
+                            },
+                            "quoteSourceName": {
+                                "type": "string"
+                            },
+                            "quoteSummary": {
+                                "properties": {
+                                    "earnings": {
+                                        "properties": {
+                                            "earningsChart": {
+                                                "properties": {
+                                                    "currentQuarterEstimate": {
+                                                        "type": "number"
+                                                    },
+                                                    "currentQuarterEstimateDate": {
+                                                        "type": "string"
+                                                    },
+                                                    "currentQuarterEstimateYear": {
+                                                        "type": "number"
+                                                    },
+                                                    "earningsDate": {
+                                                        "items": {
+                                                            "type": "number"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "quarterly": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "actual": {
+                                                                    "type": "number"
+                                                                },
+                                                                "date": {
+                                                                    "type": "string"
+                                                                },
+                                                                "estimate": {
+                                                                    "type": "number"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "date",
+                                                                "actual",
+                                                                "estimate"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "financialCurrency": {
+                                                "type": "string"
+                                            },
+                                            "financialsChart": {
+                                                "properties": {
+                                                    "quarterly": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "date": {
+                                                                    "type": "string"
+                                                                },
+                                                                "earnings": {
+                                                                    "type": "number"
+                                                                },
+                                                                "revenue": {
+                                                                    "type": "number"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "date",
+                                                                "revenue",
+                                                                "earnings"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "yearly": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "date": {
+                                                                    "type": "number"
+                                                                },
+                                                                "earnings": {
+                                                                    "type": "number"
+                                                                },
+                                                                "revenue": {
+                                                                    "type": "number"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "date",
+                                                                "revenue",
+                                                                "earnings"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "maxAge": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "quoteType": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "regularMarketChange": {
+                                "type": "number"
+                            },
+                            "regularMarketChangePercent": {
+                                "type": "number"
+                            },
+                            "regularMarketDayHigh": {
+                                "type": "number"
+                            },
+                            "regularMarketDayLow": {
+                                "type": "number"
+                            },
+                            "regularMarketDayRange": {
+                                "type": "string"
+                            },
+                            "regularMarketOpen": {
+                                "type": "number"
+                            },
+                            "regularMarketPreviousClose": {
+                                "type": "number"
+                            },
+                            "regularMarketPrice": {
+                                "type": "number"
+                            },
+                            "regularMarketTime": {
+                                "type": "number"
+                            },
+                            "regularMarketVolume": {
+                                "type": "number"
+                            },
+                            "revenue": {
+                                "type": "number"
+                            },
+                            "sharesOutstanding": {
+                                "type": "number"
+                            },
+                            "sharesShort": {
+                                "type": "number"
+                            },
+                            "sharesShortPrevMonth": {
+                                "type": "number"
+                            },
+                            "shortName": {
+                                "type": "string"
+                            },
+                            "shortPercentFloat": {
+                                "type": "number"
+                            },
+                            "shortRatio": {
+                                "type": "number"
+                            },
+                            "sourceInterval": {
+                                "type": "number"
+                            },
+                            "symbol": {
+                                "type": "string"
+                            },
+                            "targetPriceHigh": {
+                                "type": "number"
+                            },
+                            "targetPriceLow": {
+                                "type": "number"
+                            },
+                            "targetPriceMean": {
+                                "type": "number"
+                            },
+                            "targetPriceMedian": {
+                                "type": "number"
+                            },
+                            "totalCash": {
+                                "type": "number"
+                            },
+                            "tradeable": {
+                                "type": "boolean"
+                            },
+                            "trailingPE": {
+                                "type": "number"
+                            },
+                            "triggerable": {
+                                "type": "boolean"
+                            },
+                            "twoHundredDayAverage": {
+                                "type": "number"
+                            },
+                            "twoHundredDayAverageChange": {
+                                "type": "number"
+                            },
+                            "twoHundredDayAverageChangePercent": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "language",
+                            "region",
+                            "quoteType",
+                            "quoteSourceName",
+                            "triggerable",
+                            "quoteSummary",
+                            "currency",
+                            "heldPercentInstitutions",
+                            "postMarketChangePercent",
+                            "postMarketTime",
+                            "postMarketPrice",
+                            "postMarketChange",
+                            "regularMarketChange",
+                            "regularMarketChangePercent",
+                            "regularMarketTime",
+                            "regularMarketPrice",
+                            "regularMarketDayHigh",
+                            "regularMarketDayRange",
+                            "regularMarketDayLow",
+                            "regularMarketVolume",
+                            "sharesShort",
+                            "sharesShortPrevMonth",
+                            "shortPercentFloat",
+                            "regularMarketPreviousClose",
+                            "bid",
+                            "ask",
+                            "bidSize",
+                            "askSize",
+                            "exchange",
+                            "market",
+                            "messageBoardId",
+                            "fullExchangeName",
+                            "shortName",
+                            "longName",
+                            "regularMarketOpen",
+                            "averageDailyVolume3Month",
+                            "averageDailyVolume10Day",
+                            "beta",
+                            "fiftyTwoWeekLowChange",
+                            "fiftyTwoWeekLowChangePercent",
+                            "fiftyTwoWeekRange",
+                            "fiftyTwoWeekHighChange",
+                            "fiftyTwoWeekHighChangePercent",
+                            "fiftyTwoWeekLow",
+                            "fiftyTwoWeekHigh",
+                            "earningsTimestamp",
+                            "earningsTimestampStart",
+                            "earningsTimestampEnd",
+                            "trailingPE",
+                            "pegRatio",
+                            "dividendsPerShare",
+                            "revenue",
+                            "priceToSales",
+                            "marketState",
+                            "epsTrailingTwelveMonths",
+                            "epsForward",
+                            "epsCurrentYear",
+                            "epsNextQuarter",
+                            "firstTradeDateMilliseconds",
+                            "priceHint",
+                            "totalCash",
+                            "floatShares",
+                            "ebitda",
+                            "shortRatio",
+                            "preMarketChange",
+                            "preMarketChangePercent",
+                            "preMarketTime",
+                            "targetPriceHigh",
+                            "targetPriceLow",
+                            "targetPriceMean",
+                            "targetPriceMedian",
+                            "preMarketPrice",
+                            "heldPercentInsiders",
+                            "priceEpsCurrentYear",
+                            "priceEpsNextQuarter",
+                            "sharesOutstanding",
+                            "bookValue",
+                            "fiftyDayAverage",
+                            "fiftyDayAverageChange",
+                            "fiftyDayAverageChangePercent",
+                            "twoHundredDayAverage",
+                            "twoHundredDayAverageChange",
+                            "twoHundredDayAverageChangePercent",
+                            "marketCap",
+                            "forwardPE",
+                            "priceToBook",
+                            "sourceInterval",
+                            "exchangeDataDelayedBy",
+                            "exchangeTimezoneName",
+                            "exchangeTimezoneShortName",
+                            "pageViews",
+                            "gmtOffSetMilliseconds",
+                            "esgPopulated",
+                            "tradeable",
+                            "components",
+                            "symbol"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "type": "object"
+}

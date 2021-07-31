@@ -1,0 +1,102 @@
+
+
+
+
+
+
+
+
+YahooFinance API :
+https://rapidapi.com/apidojo/api/yahoo-finance1
+
+
+
+YahooFinance API Setup Tutorial :
+https://rapidapi.com/apidojo/api/yahoo-finance1/tutorials/build-your-own-stock-charts-with-yahoo-finance-api-and-python
+
+
+
+Current time & Format time string :
+https://stackoverflow.com/questions/46463997/how-to-set-date-time-format-in-logic-app/50913768
+
+
+
+Function Time Trigger 0 * * * * * :
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer?tabs=csharp
+
+
+
+Upload blobs to container :
+https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-dotnet
+
+
+
+Parse JSON Logic App :
+https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-perform-data-operations#filter-array-action
+
+
+
+Environment Variables :
+1 - https://docs.microsoft.com/en-us/azure/app-service/configure-common
+2 - https://docs.microsoft.com/en-us/dotnet/api/system.environmentvariabletarget?view=net-5.0
+
+
+
+Corrigir "Expected Integer but got Number error" :
+https://d365demystified.com/2021/03/25/invalid-type-expected-integer-but-got-number-error-in-parse-json-error-at-runtime-after-generating-schema-power-automate/
+
+
+
+Usar MemoryStream :
+https://stackoverflow.com/questions/61280495/add-json-string-directly-to-azure-blob-storage-container-using-c-sharp
+
+
+
+Cron Calculator :
+https://crontab.cronhub.io/
+
+
+
+Correr o agent no PC pessoal :
+https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-windows?view=azure-devops#learn-about-agents
+
+
+
+HTML Form to JSON Blob :
+https://github.com/davedoesdemos/Quickwins-FormsData/blob/master/QuickwinsFormsData.md
+
+
+
+Null var :
+https://stackoverflow.com/questions/2904689/how-to-initialize-var
+
+
+
+Logic App If and Else :
+https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-control-flow-conditional-statement
+
+
+
+Usar StreamReader :
+https://www.pritambaldota.com/reading-string-content-from-azure-blob-storage-using-csharp/
+
+
+
+Deserialize JSON :
+https://www.newtonsoft.com/json/help/html/DeserializeObject.htm
+
+
+
+Static Website Blob Storage :
+https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website
+
+
+
+HTTP Request/Responsa :
+https://docs.microsoft.com/en-us/azure/connectors/connectors-native-reqres
+
+
+
+
+
+

@@ -1,0 +1,190 @@
+[2021-07-07 15:30:19Z INFO AgentProcess] Agent package win-x64.
+[2021-07-07 15:30:19Z INFO AgentProcess] Running on Windows (X64).
+[2021-07-07 15:30:19Z INFO AgentProcess] RuntimeInformation: Microsoft Windows 10.0.22000.
+[2021-07-07 15:30:19Z INFO AgentProcess] Version: 2.188.3
+[2021-07-07 15:30:19Z INFO AgentProcess] Commit: c37ab2642aed2535892a7014e0f96d1e87828d4d
+[2021-07-07 15:30:19Z INFO AgentProcess] Culture: pt-PT
+[2021-07-07 15:30:19Z INFO AgentProcess] UI Culture: pt-PT
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:19Z INFO AgentProcess] Validating directory permissions for: 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:19Z INFO PowerShellExeUtil] Generation: '1'
+[2021-07-07 15:30:19Z INFO PowerShellExeUtil] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\PowerShellEngine', value name 'PowerShellVersion': '2.0'
+[2021-07-07 15:30:19Z INFO PowerShellExeUtil] Unsupported version. Skipping.
+[2021-07-07 15:30:19Z INFO PowerShellExeUtil] Generation: '3'
+[2021-07-07 15:30:19Z INFO PowerShellExeUtil] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\3\PowerShellEngine', value name 'PowerShellVersion': '5.1.22000.1'
+[2021-07-07 15:30:19Z INFO PowerShellExeUtil] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\3\PowerShellEngine', value name 'ApplicationBase': 'C:\Windows\System32\WindowsPowerShell\v1.0'
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework', value name 'InstallRoot': 'C:\Windows\Microsoft.NET\Framework64\'
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'SOFTWARE\Microsoft\NET Framework Setup\NDP' contains sub keys:
+[2021-07-07 15:30:19Z INFO AgentProcess]  'CDF'
+[2021-07-07 15:30:19Z INFO AgentProcess]  'v2.0.50727'
+[2021-07-07 15:30:19Z INFO AgentProcess]  'v3.0'
+[2021-07-07 15:30:19Z INFO AgentProcess]  'v3.5'
+[2021-07-07 15:30:19Z INFO AgentProcess]  'v4'
+[2021-07-07 15:30:19Z INFO AgentProcess]  'v4.0'
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727', value name 'Version': '2.0.50727.4927'
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727', value name 'Install': '1'
+[2021-07-07 15:30:19Z INFO AgentProcess] Testing directory: 'C:\Windows\Microsoft.NET\Framework64\v2.0.50727'
+[2021-07-07 15:30:19Z INFO AgentProcess] Found version: 2.0.50727
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.0', value name 'Version': '3.0.30729.4926'
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.0', value name 'Install': '1'
+[2021-07-07 15:30:19Z INFO AgentProcess] Testing directory: 'C:\Windows\Microsoft.NET\Framework64\v3.0'
+[2021-07-07 15:30:19Z INFO AgentProcess] Found version: 3.0
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5', value name 'Version': '3.5.30729.4926'
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5', value name 'Install': '1'
+[2021-07-07 15:30:19Z INFO AgentProcess] Testing directory: 'C:\Windows\Microsoft.NET\Framework64\v3.5'
+[2021-07-07 15:30:19Z INFO AgentProcess] Found version: 3.5
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4', value name 'Version' is null.
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4', value name '' is null.
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'SOFTWARE\Microsoft\NET Framework Setup\NDP\v4' contains sub keys:
+[2021-07-07 15:30:19Z INFO AgentProcess]  'Client'
+[2021-07-07 15:30:19Z INFO AgentProcess]  'Full'
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client', value name 'Version': '4.8.04161'
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client', value name 'Install': '1'
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client', value name 'InstallPath': 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\'
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client', value name 'Release': '528449'
+[2021-07-07 15:30:19Z INFO AgentProcess] Type is System.Int32
+[2021-07-07 15:30:19Z INFO AgentProcess] Interpreted version: 4.7.0
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full', value name 'Version': '4.8.04161'
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full', value name 'Install': '1'
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full', value name 'InstallPath': 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\'
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full', value name 'Release': '528449'
+[2021-07-07 15:30:19Z INFO AgentProcess] Type is System.Int32
+[2021-07-07 15:30:19Z INFO AgentProcess] Interpreted version: 4.7.0
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4.0', value name 'Version' is null.
+[2021-07-07 15:30:19Z INFO AgentProcess] Key name 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4.0', value name '': 'deprecated'
+[2021-07-07 15:30:19Z INFO AgentProcess] Found 5 versions:
+[2021-07-07 15:30:19Z INFO AgentProcess]  2.0.50727
+[2021-07-07 15:30:19Z INFO AgentProcess]  3.0
+[2021-07-07 15:30:19Z INFO AgentProcess]  3.5
+[2021-07-07 15:30:19Z INFO AgentProcess]  4.7.0
+[2021-07-07 15:30:19Z INFO AgentProcess]  4.7.0
+[2021-07-07 15:30:19Z INFO AgentProcess] Testing for min NET Framework version: '4.5'
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:19Z INFO CommandSettings] Remove {
+  "Auth": null,
+  "LaunchBrowser": false,
+  "Password": null,
+  "Token": null,
+  "Unattended": false,
+  "UserName": null,
+  "Help": false,
+  "Version": false
+}
+[2021-07-07 15:30:19Z INFO AgentProcess] Arguments parsed
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:19Z INFO HostContext] Well known config file 'Proxy': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.proxy'
+[2021-07-07 15:30:19Z INFO VstsAgentWebProxy] No proxy setting found.
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:19Z INFO HostContext] Well known config file 'Certificates': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.certificates'
+[2021-07-07 15:30:19Z INFO AgentCertificateManager] No certificate setting found.
+[2021-07-07 15:30:19Z INFO Agent] ExecuteCommand
+[2021-07-07 15:30:19Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\sytur\Desktop\AzureDevOps AGENT\bin\Agent.Listener.dll
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:19Z INFO ConfigurationStore] binPath: C:\Users\sytur\Desktop\AzureDevOps AGENT\bin
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:19Z INFO ConfigurationStore] RootFolder: C:\Users\sytur\Desktop\AzureDevOps AGENT
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:19Z INFO HostContext] Well known config file 'Agent': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.agent'
+[2021-07-07 15:30:19Z INFO ConfigurationStore] ConfigFilePath: C:\Users\sytur\Desktop\AzureDevOps AGENT\.agent
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:19Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.credentials'
+[2021-07-07 15:30:19Z INFO ConfigurationStore] CredFilePath: C:\Users\sytur\Desktop\AzureDevOps AGENT\.credentials
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:19Z INFO HostContext] Well known config file 'Service': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.service'
+[2021-07-07 15:30:19Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\sytur\Desktop\AzureDevOps AGENT\.service
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:19Z INFO HostContext] Well known config file 'Autologon': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.autologon'
+[2021-07-07 15:30:19Z INFO ConfigurationStore] AutoLogonSettingsFilePath: C:\Users\sytur\Desktop\AzureDevOps AGENT\.autologon
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:19Z INFO HostContext] Well known config file 'Options': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.options'
+[2021-07-07 15:30:19Z INFO ConfigurationStore] RuntimeOptionsFilePath: C:\Users\sytur\Desktop\AzureDevOps AGENT\.options
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:19Z INFO HostContext] Well known config file 'SetupInfo': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.setup_info'
+[2021-07-07 15:30:19Z INFO ConfigurationStore] SetupInfoFilePath: C:\Users\sytur\Desktop\AzureDevOps AGENT\.setup_info
+[2021-07-07 15:30:19Z INFO ConfigurationStore] IsServiceConfigured()
+[2021-07-07 15:30:19Z INFO ConfigurationStore] IsServiceConfigured: False
+[2021-07-07 15:30:19Z INFO ConfigurationStore] IsAutoLogonConfigured: False
+[2021-07-07 15:30:19Z INFO ConfigurationManager] AutoLogon was not configured on the agent.
+[2021-07-07 15:30:19Z INFO Terminal] WRITE LINE: Removing agent from the server
+[2021-07-07 15:30:19Z INFO ConfigurationStore] IsConfigured()
+[2021-07-07 15:30:19Z INFO ConfigurationStore] IsConfigured: True
+[2021-07-07 15:30:19Z INFO ConfigurationStore] HasCredentials()
+[2021-07-07 15:30:19Z INFO ConfigurationStore] stored True
+[2021-07-07 15:30:19Z INFO ConfigurationStore] Read setting file: 176 chars
+[2021-07-07 15:30:19Z INFO ConfigurationManager] GetCredentialProvider
+[2021-07-07 15:30:19Z INFO CommandSettings] Arg 'auth': ''
+[2021-07-07 15:30:19Z INFO CommandSettings] Flag 'unattended': 'False'
+[2021-07-07 15:30:19Z INFO PromptManager] ReadValue
+[2021-07-07 15:30:19Z INFO Terminal] WRITE: Enter authentication type (press enter for PAT) > 
+[2021-07-07 15:30:19Z INFO Terminal] READ LINE
+[2021-07-07 15:30:20Z INFO Terminal] Read value: ''
+[2021-07-07 15:30:20Z INFO PromptManager] Falling back to the default: 'PAT'
+[2021-07-07 15:30:20Z INFO ConfigurationManager] Creating credential for auth: PAT
+[2021-07-07 15:30:20Z INFO CredentialManager] GetCredentialProvider
+[2021-07-07 15:30:20Z INFO CredentialManager] Creating type PAT
+[2021-07-07 15:30:20Z INFO CredentialManager] Creating credential type: PAT
+[2021-07-07 15:30:20Z INFO PersonalAccessToken] EnsureCredential
+[2021-07-07 15:30:20Z INFO CommandSettings] Arg 'token': ''
+[2021-07-07 15:30:20Z INFO CommandSettings] Flag 'unattended': 'False'
+[2021-07-07 15:30:20Z INFO PromptManager] ReadValue
+[2021-07-07 15:30:20Z INFO Terminal] WRITE: Enter personal access token > 
+[2021-07-07 15:30:20Z INFO Terminal] READ SECRET
+[2021-07-07 15:30:22Z INFO Terminal] Read value: '***'
+[2021-07-07 15:30:22Z INFO PersonalAccessToken] GetVssCredentials
+[2021-07-07 15:30:22Z INFO PersonalAccessToken] token retrieved: 52 chars
+[2021-07-07 15:30:22Z INFO PersonalAccessToken] cred created
+[2021-07-07 15:30:22Z INFO ConfigurationManager] cred retrieved
+[2021-07-07 15:30:22Z INFO ConfigurationManager] Agent configured for deploymentGroup : False
+[2021-07-07 15:30:22Z INFO ExtensionManager] Getting extensions for interface: 'Microsoft.VisualStudio.Services.Agent.Listener.Configuration.IConfigurationProvider'
+[2021-07-07 15:30:22Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Listener.Configuration.BuildReleasesAgentConfigProvider, Agent.Listener
+[2021-07-07 15:30:22Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Listener.Configuration.DeploymentGroupAgentConfigProvider, Agent.Listener
+[2021-07-07 15:30:22Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Listener.Configuration.SharedDeploymentAgentConfigProvider, Agent.Listener
+[2021-07-07 15:30:22Z INFO ExtensionManager] Creating instance: Microsoft.VisualStudio.Services.Agent.Listener.Configuration.EnvironmentVMResourceConfigProvider, Agent.Listener
+[2021-07-07 15:30:23Z INFO VisualStudioServices] Starting operation Location.GetConnectionData
+[2021-07-07 15:30:23Z INFO VisualStudioServices] Finished operation Location.GetConnectionData
+[2021-07-07 15:30:23Z INFO VisualStudioServices] Starting operation Location.GetConnectionData
+[2021-07-07 15:30:23Z INFO VisualStudioServices] Finished operation Location.GetConnectionData
+[2021-07-07 15:30:23Z INFO ConfigurationManager] Server deployment type: Hosted
+[2021-07-07 15:30:23Z INFO Terminal] WRITE LINE: Connecting to server ...
+[2021-07-07 15:30:23Z INFO AgentServer] Establish connection with 100 seconds timeout.
+[2021-07-07 15:30:23Z INFO VisualStudioServices] Starting operation Location.GetConnectionData
+[2021-07-07 15:30:23Z INFO VisualStudioServices] Finished operation Location.GetConnectionData
+[2021-07-07 15:30:23Z INFO AgentServer] Establish connection with 60 seconds timeout.
+[2021-07-07 15:30:23Z INFO VisualStudioServices] Starting operation Location.GetConnectionData
+[2021-07-07 15:30:23Z INFO AgentServer] Establish connection with 60 seconds timeout.
+[2021-07-07 15:30:23Z INFO VisualStudioServices] Starting operation Location.GetConnectionData
+[2021-07-07 15:30:23Z INFO VisualStudioServices] Finished operation Location.GetConnectionData
+[2021-07-07 15:30:23Z INFO VisualStudioServices] Finished operation Location.GetConnectionData
+[2021-07-07 15:30:24Z INFO Terminal] WRITE LINE: Succeeded: Removing agent from the server
+[2021-07-07 15:30:24Z INFO Terminal] WRITE LINE: Removing .credentials
+[2021-07-07 15:30:24Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:24Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:24Z INFO HostContext] Well known config file 'RSACredentials': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.credentials_rsaparams'
+[2021-07-07 15:30:24Z INFO RSAEncryptedFileKeyManager] Deleting RSA key parameters file C:\Users\sytur\Desktop\AzureDevOps AGENT\.credentials_rsaparams
+[2021-07-07 15:30:24Z INFO Terminal] WRITE LINE: Succeeded: Removing .credentials
+[2021-07-07 15:30:24Z INFO Terminal] WRITE LINE: Removing .agent
+[2021-07-07 15:30:24Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:24Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:24Z INFO HostContext] Well known config file 'ProxyCredentials': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.proxycredentials'
+[2021-07-07 15:30:24Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:24Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:24Z INFO HostContext] Well known config file 'ProxyBypass': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.proxybypass'
+[2021-07-07 15:30:24Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:24Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:24Z INFO HostContext] Well known config file 'Proxy': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.proxy'
+[2021-07-07 15:30:24Z INFO VstsAgentWebProxy] Delete .proxy file: C:\Users\sytur\Desktop\AzureDevOps AGENT\.proxy
+[2021-07-07 15:30:24Z INFO HostContext] Well known directory 'Bin': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\bin'
+[2021-07-07 15:30:24Z INFO HostContext] Well known directory 'Root': 'C:\Users\sytur\Desktop\AzureDevOps AGENT'
+[2021-07-07 15:30:24Z INFO HostContext] Well known config file 'Certificates': 'C:\Users\sytur\Desktop\AzureDevOps AGENT\.certificates'
+[2021-07-07 15:30:24Z INFO Terminal] WRITE LINE: Succeeded: Removing .agent

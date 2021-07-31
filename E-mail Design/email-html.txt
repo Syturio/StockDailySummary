@@ -1,0 +1,118 @@
+<style>
+table, tr, td
+{
+  border-collapse: collapse;
+  border: none;
+  border-spacing: 0;
+  background-color: 0b0d0f;
+}
+
+td.DivImage
+{
+  background: #e82127;
+}
+
+td.DivContent
+{
+  background: #0b0d0f;
+  width: 475px;
+}
+
+div.MarketClosed
+{
+  margin-top: 20px;
+  margin-left: 50px;
+  font-family: "Tahoma";
+  font-size: 14pt;
+  letter-spacing: 0px;
+  word-spacing: 0px;
+  color: #e82127;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+div.TodaysSummary
+{
+  margin-left: 50px;
+  font-family: "Tahoma";
+  font-size: 24pt;
+  letter-spacing: 0px;
+  word-spacing: 0px;
+  color: white;
+  font-weight: bold;
+}
+
+table.StockTableTop
+{
+  margin-top: -10px;
+}
+
+table.StockTableTop, table.StockTableBottom
+{
+  width: 225px;
+  height: 50px;
+  border-collapse: collapse;
+  text-align: left;
+  margin-left: 50px;
+}
+
+table.StockTableTop th, table.StockTableTop td, table.StockTableBottom th, table.StockTableBottom td
+{
+  font-family: "Trebuchet MS";
+  letter-spacing: 0px;
+  word-spacing: 0px;
+  font-weight: bold;
+  font-size: 10pt;
+  text-align: left;
+  width: 100px;
+}
+
+table.StockTableTop th, table.StockTableBottom th
+{
+  color: #8A8D91;
+}
+
+table.StockTableTop td, table.StockTableBottom td
+{
+  color: white;
+  padding-bottom: 20px;
+}
+</style>
+
+<table class="MainTable" border=0 
+cellspacing=0 cellpadding=0>
+  <tr>
+    <td class="DivImage">
+      <img src="https://storageaccalface1.blob.core.windows.net/container-output-api/tesla-logo.png">
+    </td>
+    <td class="DivContent">
+      <div class="MarketClosed">MARKET CLOSED!</div>
+      <div class="TodaysSummary">TODAY'S SUMMARY</div>
+      <br><br>
+      <table class="StockTableTop">
+        <tr>
+          <th>Price</th>
+          <th>P.Close</th>
+          <th>%Change</th>
+        </tr>
+        <tr>
+          <td>791.92&nbsp;</td>
+          <td>791.92&nbsp;</td>
+          <td>18634522&nbsp;</td>
+        </tr>
+      </table>
+      <table class="StockTableBottom">
+        <tr>
+          <th>Low</th>
+          <th>High</th>
+          <th>Volume</th>
+        </tr>
+        <tr>
+          <td>791.92&nbsp;</td>
+          <td>791.92&nbsp;</td>
+          <td>18634522&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

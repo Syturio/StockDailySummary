@@ -1,0 +1,26 @@
+﻿{
+  "build_artifactstagingdirectory": "2\\a",
+  "agent_builddirectory": "2",
+  "collectionUrl": "https://dev.azure.com/upskillprojetoestagio/",
+  "definitionName": "Pipeline1",
+  "repositoryTrackingInfo": [
+    {
+      "identifier": "__designer_repo",
+      "repositoryType": "GitHub",
+      "repositoryUrl": "https://github.com/Syturio/TeslaDailySummary",
+      "sourcesDirectory": "2\\s\\TeslaDailySummary"
+    }
+  ],
+  "fileFormatVersion": 3,
+  "lastRunOn": "07/10/2021 19:05:46 +01:00",
+  "repositoryType": "GitHub",
+  "lastMaintenanceAttemptedOn": "",
+  "lastMaintenanceCompletedOn": "",
+  "build_sourcesdirectory": "2\\s",
+  "common_testresultsdirectory": "2\\TestResults",
+  "collectionId": "691acfa7-acdb-4abd-899c-772800311b5e",
+  "definitionId": "2",
+  "hashKey": "dd5dd1a50c55daf9e4dc18e5f775656457cc9a29",
+  "repositoryUrl": "https://github.com/Syturio/TeslaDailySummary",
+  "system": "build"
+}

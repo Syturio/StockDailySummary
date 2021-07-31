@@ -1,0 +1,8 @@
+﻿{
+  "agentId": 9,
+  "agentName": "PC-TIAGOALFACE",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://dev.azure.com/upskillprojetoestagio/",
+  "workFolder": "_work"
+}

@@ -1,0 +1,26 @@
+﻿{
+  "build_artifactstagingdirectory": "3\\a",
+  "agent_builddirectory": "3",
+  "collectionUrl": "https://dev.azure.com/upskillprojetoestagio/",
+  "definitionName": "Pipeline1",
+  "repositoryTrackingInfo": [
+    {
+      "identifier": "__designer_repo",
+      "repositoryType": "GitHub",
+      "repositoryUrl": "https://github.com/Syturio/StockDailySummary",
+      "sourcesDirectory": "3\\s\\StockDailySummary"
+    }
+  ],
+  "fileFormatVersion": 3,
+  "lastRunOn": "07/20/2021 15:41:15 +01:00",
+  "repositoryType": "GitHub",
+  "lastMaintenanceAttemptedOn": "",
+  "lastMaintenanceCompletedOn": "",
+  "build_sourcesdirectory": "3\\s",
+  "common_testresultsdirectory": "3\\TestResults",
+  "collectionId": "691acfa7-acdb-4abd-899c-772800311b5e",
+  "definitionId": "2",
+  "hashKey": "1a20ee1595e930838a73d57475a8a90f8b2f563a",
+  "repositoryUrl": "https://github.com/Syturio/StockDailySummary",
+  "system": "build"
+}

@@ -1,0 +1,26 @@
+﻿{
+  "build_artifactstagingdirectory": "1\\a",
+  "agent_builddirectory": "1",
+  "collectionUrl": "https://dev.azure.com/TiagoAlface/",
+  "definitionName": "ProjetoEstágio-Azure Functions for .NET-CI",
+  "repositoryTrackingInfo": [
+    {
+      "identifier": "__designer_repo",
+      "repositoryType": "GitHub",
+      "repositoryUrl": "https://github.com/Syturio/TeslaDailySummary",
+      "sourcesDirectory": "1\\s\\TeslaDailySummary"
+    }
+  ],
+  "fileFormatVersion": 3,
+  "lastRunOn": "07/07/2021 16:00:56 +01:00",
+  "repositoryType": "GitHub",
+  "lastMaintenanceAttemptedOn": "",
+  "lastMaintenanceCompletedOn": "",
+  "build_sourcesdirectory": "1\\s",
+  "common_testresultsdirectory": "1\\TestResults",
+  "collectionId": "abdeb553-128c-4c7c-8c74-5b007adf85fe",
+  "definitionId": "2",
+  "hashKey": "6ee32afc1cc9eec0abd20690d42ef135a3e51ad5",
+  "repositoryUrl": "https://github.com/Syturio/TeslaDailySummary",
+  "system": "build"
+}
